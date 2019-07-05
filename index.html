@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+
+        //keeping score//
+
+        var wins= 0;
+        var failures= 0;
+
+            // array of letters for user to choose from// 
+
+            var alphabet = ["a","b","c","d","e","f",
+                            "g","h","i","j","k","l",
+                            "m","n","o","p","q","r","s","t","u","v","w","x","y","z" 
+                            ];
+
+
+            
+           //computer to pick random
+                   
+           var randomchoice = Math.floor(Math.random() * alphabet.length);
+            var computermove = alphabet[randomchoice];
+    
+                console.log (computermove);
+
+                document.onkeyup = function(event) {
+
+
+                    var usermove= event.key;
+                    
+                }
+
+
+
+    </script>
+
+
+</body>
+</html>

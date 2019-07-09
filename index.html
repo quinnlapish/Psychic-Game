@@ -19,7 +19,7 @@
     <h3 class="txtcenter"> <span>Guesses left:</span><span id="guesses"></span></h3>
     <h4 class="txtcenter"> <span>Wins:</span><span id="wins"></span></h4>
     <h5 class="txtcenter"> <span>Failures:</span><span id="failures"></span></h5>
-    <h6 class="txtcenter"> <span> Letter's Guessed: </span><span id="usermove"></span></h6>
+    <h6 class="txtcenter"> <span> Letters Guessed: </span><span id="usermove"></span></h6>
     <div class="imgc">
 
         <img src="assets/images/b8a8a50d643eb648e5fa03c7b2334c25.jpg">
@@ -88,7 +88,7 @@
                     }
                     else {
 
-                        document.querySelector("#usermove").innerHTML = usermove;
+                        document.querySelector("#usermove").append(usermove + ", ");
 
                      guesses--;
                      document.querySelector("#guesses").innerHTML = guesses;

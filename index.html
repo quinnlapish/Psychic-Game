@@ -5,15 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 <body>
 
+    
+    <h1 class="txtcenter">
+    The Pyschic Game
+    </h1>
+
+    <h2 class="txtcenter"> Push any key to open the magic guessing box </h2>
+    <h3> <span>Guesses left:</span><span id="guesses"></span></h3>
+    <div class="imgc">
+
+        <img src="assets/images/b8a8a50d643eb648e5fa03c7b2334c25.jpg">
+    </div>
+<div> 
+
+    <p id="wins"> </p> 
+    <P id="failures"></P>
+    <p id="guesses"></p>
+    <p id="maxguesses"></p>
+
+
+</div>
+
     <script>
-
-        //keeping score//
-
-        var wins= 0;
-        var failures= 0;
+        debugger;
+       
 
             // array of letters for user to choose from// 
 
@@ -22,23 +42,64 @@
                             "m","n","o","p","q","r","s","t","u","v","w","x","y","z" 
                             ];
 
+         //keeping score//
 
+                 var wins= 0;
+                  var failures= 0;
+                    var guesses = 0;
+                      var maxguesses =10;
+                        var computermove ="";
+                    //start game functiondd//
+
+                    function startgame ()
+                    {
+
+                        computermove = alphabet [Math.floor (Math.random () * alphabet.length)]
+;
+                        console.log(computermove)
+                         guesses = maxguesses;
+
+                    }
             
+                        startgame();
+
            //computer to pick random
                    
-           var randomchoice = Math.floor(Math.random() * alphabet.length);
-            var computermove = alphabet[randomchoice];
+           
     
-                console.log (computermove);
 
-                document.onkeyup = function(event) {
-
-
-                    var usermove= event.key;
+                document.onkeypress = function (event) {
                     
+                    var usermove = prompt ("Pick a letter");
+
+                    if (usermove == computermove) 
+                    {wins++;
+
+                        document.querySelector("#wins").innerHTML = wins;
+
+                    console.log(wins);  
+                    startgame();  
+                    }
+                    else {
+
+                     guesses--;
+                     document.querySelector("#guesses").innerHTML = guesses;
+                     console.log(guesses)
+                    }
+                
+                if (guesses == 0) 
+                
+                {failures++
+
+                startgame();
+
+                console.log(failures)
                 }
+                }
+                
+        
 
-
+                    
 
     </script>
 
